@@ -1,0 +1,135 @@
+.home {
+  $self: &;
+
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+  
+  &__aside {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    display: flex;
+    flex: 7;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 80px;
+
+    &-image {
+      max-width: 320px;
+    }
+
+    &-title {
+      font: 700 36px var(--font-secondary);
+      line-height: 42px;
+      margin-top: 36px;
+    }
+
+    &-description {
+      font-size: 24px;
+      line-height: 32px;
+      margin-top: 16px;
+      color: var(--color-white-background);
+    }
+  }
+
+  &__main {
+    flex: 8;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-title {
+      font-size: 24px;
+      margin: 64px 0 24px;
+      font-family: var(--font-secondary);
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 320px;
+      align-items: stretch;
+      text-align: center;
+    }
+
+    &-image {
+      align-self: center;
+    }
+
+    &-google {
+      margin-top: 64px;
+      height: 50px;
+      border-radius: 8px;
+      font-weight: 500;
+      background-color: var(--color-danger);
+      color: var(--color-white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border: 0;
+      transition: filter .2s;
+
+      &-icon {
+        margin-right: 8px;
+      }
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+
+    &-separator {
+      font-size: 14px;
+      color: var(--color-gray-medium);
+      margin: 32px 0;
+      display: flex;
+      align-items: center;
+
+      &::before,
+      &::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background-color: var(--color-gray-medium);
+      }
+
+      &::before {
+        margin-right: 16px;
+      }
+
+      &::after {
+        margin-left: 16px;
+      }
+    }
+
+    &-input {
+      height: 50px;
+      border-radius: 8px;
+      padding: 0 16px;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-gray-medium);
+    }
+
+    &-button {
+      margin-top: 16px;
+    }
+
+    &-button,
+    &-input {
+      width:100%;
+    }
+
+    &-signup {
+      font-size: 14px;
+      color: var(--color-gray-dark);
+      margin-top: 16px;
+      
+      & a {
+        color: var(--color-pink);
+      }
+    }
+  }
+}
