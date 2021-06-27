@@ -1,13 +1,20 @@
 import '../styles/button.scss';
 import { ButtonHTMLAttributes } from "react";
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  isOutlined?: boolean,
+};
 
 export function Button(props: ButtonProps) {
-  const { className: classes, ...restProps } = props;
-  const customClass = classes ? `button ${classes}` : 'button';
+  const { isOutlined, className: classes, ...restProps } = props;
+  const customClass = classes ? classes : '';
+  const outlinedClass = isOutlined ? 'outlined' : '';
 
   return (
-    <button className={customClass} { ...restProps }></button>
+    <button className={`button ${customClass} ${outlinedClass}`} { ...restProps }></button>
   )
+}
+
+Button.defaultProps = {
+  isOutlined: false,
 }

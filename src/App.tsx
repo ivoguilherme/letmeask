@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Home, NewRoom, Room } from './pages';
+import { AdminRoom, Home, NewRoom, Room } from './pages';
 
 import { AuthContextProvider } from './contexts';
 
@@ -7,6 +7,7 @@ const routes = [
   { path: '/', component: Home, exact: true },
   { path: '/rooms/new', component: NewRoom },
   { path: '/rooms/:id', component: Room  },
+  { path: '/admin/rooms/:id', component: AdminRoom },
 ];
 
 function App() {
